@@ -64,7 +64,7 @@ void Plansza::symuluj() {
         for(unsigned j = 0; j < height_; ++j)
             if(liczSasiadow(i,j) == 3)
                 vPar.push_back(Para(i,j,true));
-            else if(liczSasiadow(i,j) == 4)
+            else if(liczSasiadow(i,j) == 4 || liczSasiadow(i,j) < 2)
                 vPar.push_back(Para(i,j,false));
             
     }
@@ -80,15 +80,31 @@ unsigned Plansza::liczSasiadow(unsigned x, unsigned y) {
             ++counter;
     
     if((x+1) >= 0 && (x+1) < width_ && (y+1) >= 0 && (y+1) < height_)
-        if(objectTab_[x+1][y]->getStatus())
+        if(objectTab_[x+1][y+1]->getStatus())
             ++counter;
     
     if((x-1) >= 0 && (x-1) < width_ && y >= 0 && y < height_)
-        if(objectTab_[x+1][y]->getStatus())
+        if(objectTab_[x-1][y]->getStatus())
             ++counter;
     
     if((x-1) >= 0 && (x-1) < width_ && (y-1) >= 0 && (y-1) < height_)
-        if(objectTab_[x+1][y]->getStatus())
+        if(objectTab_[x-1][y-1]->getStatus())
+            ++counter;
+    
+    if((x) >= 0 && (x) < width_ && (y-1) >= 0 && (y-1) < height_)
+        if(objectTab_[x][y-1]->getStatus())
+            ++counter;
+    
+    if((x-1) >= 0 && (x-1) < width_ && (y+1) >= 0 && (y+1) < height_)
+        if(objectTab_[x-1][y+1]->getStatus())
+            ++counter;
+    
+    if((x) >= 0 && (x) < width_ && (y+1) >= 0 && (y+1) < height_)
+        if(objectTab_[x][y+1]->getStatus())
+            ++counter;
+    
+    if((x+1) >= 0 && (x+1) < width_ && (y-1) >= 0 && (y-1) < height_)
+        if(objectTab_[x+1][y-1]->getStatus())
             ++counter;
     
     return counter;

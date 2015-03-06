@@ -11,6 +11,6 @@ using namespace std;
 int main(int argc, char** argv) {
     Gra* gra;
     gra = new Gra();
-//    gra.graj();
+    gra->graj();
     return 0;
 }

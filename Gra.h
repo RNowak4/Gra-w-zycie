@@ -5,6 +5,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <windows.h>
 
 class Gra {
 public:

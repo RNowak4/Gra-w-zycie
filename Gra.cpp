@@ -29,8 +29,10 @@ Gra::~Gra() {
 
 void Gra::graj() {
     while(true) {
-        plansza_->symuluj();
         plansza_->rysujPlansze();
-        std::this_thread::sleep_for(std::chrono::milliseconds(stepTime_));
+        plansza_->symuluj();
+//        Ciekawe, czemu wywala blad :/
+//        std::this_thread::sleep_for(std::chrono::milliseconds(stepTime_));
+        Sleep(stepTime_);
     }
 }
