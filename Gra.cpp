@@ -18,6 +18,8 @@ Gra::Gra() {
             break;
         plansza_->ozywKomorke(posX, posY);
     } while(true);
+    
+    system("cls");
 }
 
 Gra::Gra(const Gra& orig) {

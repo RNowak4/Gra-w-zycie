@@ -40,18 +40,21 @@ void Plansza::ozywKomorke(unsigned x, unsigned y) {
         objectTab_[x][y]->changeStatus(true);
 }
 
-void Plansza::rysujPlansze() {
-    // zal.pl
-    for(int i = 0; i < 30; ++i) {
-        std::cout << std::endl;
-    }
-    
+void gotoxy(SHORT x,SHORT y) {
+    COORD coord = {x,y};
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+}
+
+void Plansza::rysujPlansze() {    
     for(int i = 0; i < width_; ++i) {
         for(int j = 0; j < height_; ++j) {
-            if(objectTab_[i][j]->getStatus() == true)
+            gotoxy(i,j);
+            if(objectTab_[i][j]->getStatus() == true){
                 std::cout << "X";
-            else 
+            }
+            else {
                 std::cout << " ";
+            }
         }
         std::cout << std::endl;            
     }

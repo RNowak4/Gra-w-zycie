@@ -3,9 +3,10 @@
 
 #include "Plansza.h"
 #include <iostream>
-#include <thread>
-#include <chrono>
+//#include <thread>
+//#include <chrono>
 #include <windows.h>
+#include <cstdlib>
 
 class Gra {
 public:

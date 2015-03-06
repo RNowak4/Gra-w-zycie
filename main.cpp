@@ -1,6 +1,5 @@
 /***
  * Standardowa wersja gry w zycie
- * Do zrobienia normalne wyswietlanie
  * Zrobic Plansze jako singleton
  */
 
