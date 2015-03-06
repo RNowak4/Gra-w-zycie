@@ -62,13 +62,16 @@ void Plansza::rysujPlansze() {
 
 void Plansza::symuluj() {    
     std::vector<Para> vPar;
+    unsigned liczba_sasiadow;
     
     for(unsigned i = 0; i < width_; ++i) {
-        for(unsigned j = 0; j < height_; ++j)
-            if(liczSasiadow(i,j) == 3)
+        for(unsigned j = 0; j < height_; ++j) {
+            liczba_sasiadow = liczSasiadow(i,j);
+            if(liczba_sasiadow == 3)
                 vPar.push_back(Para(i,j,true));
-            else if(liczSasiadow(i,j) == 4 || liczSasiadow(i,j) < 2)
+            else if(liczba_sasiadow == 4 || liczba_sasiadow < 2)
                 vPar.push_back(Para(i,j,false));
+        }
             
     }
     for(std::vector<Para>::iterator it = vPar.begin(); it != vPar.end(); ++it) {
