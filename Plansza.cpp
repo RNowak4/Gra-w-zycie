@@ -67,7 +67,9 @@ void Plansza::symuluj() {
     for(unsigned i = 0; i < width_; ++i) {
         for(unsigned j = 0; j < height_; ++j) {
             liczba_sasiadow = liczSasiadow(i,j);
-            if(liczba_sasiadow == 3 || liczba_sasiadow == 2)
+            if(liczba_sasiadow == 3)
+                vPar.push_back(Para(i,j,true));
+            else if(objectTab_[i][j]->getStatus() == true && liczba_sasiadow == 2)
                 vPar.push_back(Para(i,j,true));
             else
                 vPar.push_back(Para(i,j,false));
