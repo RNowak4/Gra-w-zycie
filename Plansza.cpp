@@ -69,7 +69,7 @@ void Plansza::symuluj() {
             liczba_sasiadow = liczSasiadow(i,j);
             if(liczba_sasiadow == 3)
                 vPar.push_back(Para(i,j,true));
-            else if(liczba_sasiadow == 4 || liczba_sasiadow < 2)
+            else if(liczba_sasiadow >= 4 || liczba_sasiadow < 2)
                 vPar.push_back(Para(i,j,false));
         }
             
