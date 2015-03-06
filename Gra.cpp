@@ -6,7 +6,8 @@ Gra::Gra() {
     std::cin >> x >> y;
     std::cout << "Podaj czas w ms" << std::endl;
     std::cin >> time;
-    plansza_ = new Plansza(x,y);
+//    Jak zwykle pomylilem width z heigth :D
+    plansza_ = new Plansza(y,x);
     stepTime_ = time;
     
     int posX, posY;
