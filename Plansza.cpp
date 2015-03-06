@@ -18,7 +18,7 @@ Plansza::Plansza(unsigned wid, unsigned hei): width_(wid), height_(hei) {
     
     for(int i = 0; i < width_; ++i)
         for(int j = 0; j < height_; ++j)
-            objectTab_[i][j] = 0L;
+            objectTab_[i][j] = new Obiekt(false, i, j);
 }
 
 Plansza::~Plansza() {

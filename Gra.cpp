@@ -1,5 +1,4 @@
 #include "Gra.h"
-#include <iostream>
 
 Gra::Gra() {
     unsigned x,y,time;
@@ -28,3 +27,10 @@ Gra::~Gra() {
     delete plansza_;
 }
 
+void Gra::graj() {
+    while(true) {
+        plansza_->symuluj();
+        plansza_->rysujPlansze();
+        std::this_thread::sleep_for(std::chrono::milliseconds(stepTime_));
+    }
+}

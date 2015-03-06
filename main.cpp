@@ -10,6 +10,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
     Gra* gra;
-//    gra = new Gra();
+    gra = new Gra();
+//    gra.graj();
     return 0;
 }
