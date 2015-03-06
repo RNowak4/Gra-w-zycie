@@ -21,13 +21,14 @@ private:
     unsigned width_, height_;
     Obiekt*** objectTab_;
     unsigned liczSasiadow(unsigned, unsigned);
+    
+    struct Para{
+        Para(unsigned X, unsigned Y, bool z): x(X), y(Y), zmiana(z) { }
+        unsigned x,y;
+        bool zmiana;
+    };
 };
 
-struct Para{
-    Para(unsigned X, unsigned Y, bool z): x(X), y(Y), zmiana(z) { }
-    unsigned x,y;
-    bool zmiana;
-};
 
 #endif	/* PLANSZA_H */
 
